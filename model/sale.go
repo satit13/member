@@ -18,7 +18,7 @@ type Sales []*Sale
 func (s *Sale)GetbyMember()(sl Sales){
 
 	db,err := ConnectMssql()
-	rows , err := db.Query("select docno,docdate,totalamount from pos.dbo.bcarinvoice where arcode = ?",s.Arcode)
+	rows , err := db.Query("select docno,docdate,totalamount from bcnp.dbo.bcarinvoice where arcode = ?",s.Arcode)
 
 	if err != nil {
 		return nil
